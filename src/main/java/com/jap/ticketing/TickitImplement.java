@@ -59,15 +59,17 @@ public class TickitImplement {
         String filename = "sample.csv";
 
         List<BusRoute> routeList = t1.readFile(filename);
-        System.out.println(routeList);
-
+        for(BusRoute val : routeList) {
+            System.out.println(val);
+        }
         System.out.println("-----------------------------------------");
         int output = t1.calculateTotalCollections(routeList);
         System.out.println("output = " + output);
         System.out.println("--------------------------------------------");
-
-        System.out.println(t1.sortDistance(routeList,new DistanceComparator()));
-
+        t1.sortDistance(routeList,new DistanceComparator());
+        for(BusRoute val : routeList) {
+            System.out.println(val);
+        }
 
     }
 }
